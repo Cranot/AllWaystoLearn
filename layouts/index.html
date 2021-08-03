@@ -1,0 +1,94 @@
+{{ define "main" }}
+<div class="container flex flex-col flex-wrap items-center p-3 mx-auto lg:h-screen md:flex-row">
+	<div class="flex flex-col items-start justify-center w-full text-center md:w-2/5 md:text-left">
+		<p class="w-auto uppercase border-b-2 border-blue-500 border-solid tracking-loose">Learn Like a Hacker &#128083;</p>
+		<h1 class="my-4 text-5xl font-bold leading-tight">{{ .Site.Title }}</h1>
+		<p class="mb-8 text-2xl leading-normal">{{.Site.Params.description}}</p>
+	</div>
+	<div class="w-full py-6 text-center md:w-3/5">
+		<img class="z-50 w-full md:w-4/5" width="613" height="529" alt="study hero image" src="/img/home/hero.webp">
+	</div>
+</div>
+<section class="py-4 bg-white border-b">
+
+	<div class="container flex flex-wrap mx-auto">
+
+		<div class="w-full mb-4 text-center">
+			<h2
+				class="inline-block w-auto my-2 text-5xl font-bold text-gray-800 border-b-2 border-blue-500 border-solid">
+				Study Better</h2>
+		</div>
+
+		<div class="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
+			<div class="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+				<div class="flex flex-wrap no-underline hover:no-underline">
+					<p class="w-full px-6 text-xs text-gray-700 md:text-sm">Step 1</p>
+					<h2 class="w-full px-6 text-xl font-bold text-gray-800">Discover the Ways</h2>
+					<p class="px-6 mb-5 text-base text-gray-800">
+						Discover all the ways you can study any new skill and make the whole process a lot easier and
+						clear, awareness first.
+					</p>
+				</div>
+			</div>
+			<div class="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
+				<div class="flex justify-center">
+					<img width="220" height="220" src="/img/svg/discovering_ideas.svg" alt="Discovering ideas">
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
+			<div class="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+				<div class="flex flex-wrap no-underline hover:no-underline">
+					<p class="w-full px-6 text-xs text-gray-700 md:text-sm">Step 2</p>
+					<h2 class="w-full px-6 text-xl font-bold text-gray-800">Examine them</h2>
+					<p class="px-6 mb-5 text-base text-gray-800">
+						Examine Pros & Cons of each way to see whats working for you better at the given time.
+					</p>
+				</div>
+			</div>
+			<div class="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
+				<div class="flex justify-center">
+					<img width="220" height="220" src="/img/svg/examing.svg" alt="Examing ideas">
+				</div>
+			</div>
+		</div>
+		<div class="flex flex-col flex-grow flex-shrink w-full p-6 md:w-1/3">
+			<div class="flex-1 overflow-hidden bg-white rounded-t rounded-b-none shadow">
+				<div class="flex flex-wrap no-underline hover:no-underline">
+					<p class="w-full px-6 text-xs text-gray-700 md:text-sm">Step 3</p>
+					<h2 class="w-full px-6 text-xl font-bold text-gray-800">Study Better</h2>
+					<p class="px-6 mb-5 text-base text-gray-800">
+						Choose your preferable way to study & learn better.
+					</p>
+				</div>
+			</div>
+			<div class="flex-none p-6 mt-auto overflow-hidden bg-white rounded-t-none rounded-b shadow">
+				<div class="flex justify-center">
+					<img width="220" height="220" src="/img/svg/studying.svg" alt="Studying">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{ if .Params.home_page }}
+{{- partial "ads/google/header.html" . -}}
+{{end}}
+<div class="container mx-auto">
+	<h2 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Programming Languages</h2>
+	<p class="text-center">Learn all the ways you can learn any programming language.</p>
+	
+	<div class="grid items-center grid-cols-2 gap-2 p-1 mx-auto md:grid-cols-4 md:p-2 md:gap-3">
+		{{ range $key, $taxonomy := .Site.Taxonomies.categories }}{{ range where $taxonomy.Pages "Type" "skills" }}
+		<div class="w-auto h-auto p-2 pb-4 border rounded shadow-sm md:shadow">
+			<h3 class="pb-2 text-lg font-semibold">{{ .Params.name }}</h3>
+			<a class="w-auto my-4 font-medium text-gray-800 border-b border-blue-400" href="{{ .Permalink}}"
+				title="{{ .Title }}">Learn {{ .Params.name }} Programming</a>
+		</div>
+		{{ end }}{{ end }}
+	</div>
+</div>
+<div class="container p-4 mx-auto text-center">
+<h2 class="inline-block p-2 text-xl bg-gray-200">Contribute</h2>
+<p>We are always open to any suggestions feel free to contact us.</p>
+</div>
+{{ end }}

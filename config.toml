@@ -1,0 +1,117 @@
+baseurl = "https://allwaystolearn.com/"
+title = "Discover all the ways to learn any new skill"
+logo = "/logo.png"
+
+copyright = "Copyright © 2020, Cosmohac Project, all rights reserved."
+disablefastrender = false
+disablelivereload = false
+enableRobotsTXT = true
+canonifyURLs = true
+googleAnalytics = "UA-170998803-1"
+
+[build]
+writeStats = true
+
+[sitemap]
+	changefreq = "weekly"
+	filename = "sitemap.xml"
+	priority = 0.9
+
+[taxonomies]
+	category = "categories"
+	ptag = "programming"
+	developer = "developers"
+	author = "authors"
+
+[params]
+	appname = "All ways to learn"
+	sitename = "All Ways to learn"
+	languageCode = "en"
+	description = "It's all about learning awareness, hacking the learning process to learn easier and efficiently any new skill."
+	keywords = ["all ways to learn", "all ways to study", "learn efficiently","learn faster"]
+	email_info = "info@email.com"
+	author = "All Ways to Learn Team"
+	home_page = false
+	post_page = false
+	themeColor = "ffffff"
+	tileColor = "ffc40d"
+	google_ad_1 = false
+	google_head_script = false
+	amazonref = "tf_til"
+
+[menu]
+	[[menu.main]]
+		identifier = "home"
+		name = "Home"
+		pre = ""
+		url = "/"
+		weight = 1
+	[[menu.main]]
+		name = "Programming"
+		identifier = "programming"
+		weight = 3
+		[[menu.main]]
+			parent = "programming"
+			name = "C"
+			url = "/programming-languages/c/"
+			weight = 1
+		[[menu.main]]
+			parent = "programming"
+			name = "C++"
+			url = "/programming-languages/c-plus-plus/"
+			weight = 2
+		[[menu.main]]
+			parent = "programming"
+			name = "C#"
+			url = "/programming-languages/csharp/"
+			weight = 3
+		[[menu.main]]
+			parent = "programming"
+			name = "Go (lang)"
+			url = "/programming-languages/go/"
+			weight = 4
+		[[menu.main]]
+			parent = "programming"
+			name = "Java"
+			url = "/programming-languages/java/"
+			weight = 5
+		[[menu.main]]
+			parent = "programming"
+			name = "Javascript"
+			url = "/programming-languages/javascript/"
+			weight = 6
+		[[menu.main]]
+			parent = "programming"
+			name = "Php"
+			url = "/programming-languages/php/"
+			weight = 7
+		[[menu.main]]
+			parent = "programming"
+			name = "Python"
+			url = "/programming-languages/python/"
+			weight = 8
+		[[menu.main]]
+			parent = "programming"
+			name = "R"
+			url = "/programming-languages/r/"
+			weight = 9
+		[[menu.main]]
+			parent = "programming"
+			name = "Ruby"
+			url = "/programming-languages/ruby/"
+			weight = 10
+		[[menu.main]]
+			parent = "programming"
+			name = "Visual Basic .NET"
+			url = "/programming-languages/visual-basic/"
+			weight = 11
+		[[menu.main]]
+			parent = "programming"
+			name = "TypeScript"
+			url = "/programming-languages/typescript/"
+			weight = 12
+		[[menu.main]]
+			parent = "programming"
+			name = "Shell"
+			url = "/programming-languages/shell/"
+			weight = 13

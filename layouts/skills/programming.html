@@ -1,0 +1,329 @@
+{{ define "main" }}
+<article class="container p-2 pt-4 mx-auto">
+	<header class="overflow-hidden bg-white shadow">
+		<div class="px-4 pt-5 pb-3 sm:px-6">
+			<h1 class="text-2xl font-bold text-gray-900">{{ .Title }}</h1>
+			<p class="max-w-2xl py-2 pb-2 my-2 text-gray-700 border-t border-b border-gray-100 ">{{ .Params.description }}</p>
+			{{- partial "programming/breadcrumb.html" . -}}
+		</div>
+		{{- partial "programming/infobox.html" . -}}
+	</header>
+	{{- partial "ads/google/header.html" . -}}
+	<section class="mt-12">
+		<span class="block p-4 mb-2 text-2xl font-bold leading-tight text-gray-800 border-b-4 border-blue-400 w-max">13 of the Best Ways to Learn {{ .Params.name }}</span>
+
+		<h2 class="way-h2">01. eBook</h2>
+		<p>eBooks are a great way to start your programming experiense or expand it even more, a mobile and presice way
+			to learn {{ .Params.name }} programming. There are available in both paid and free, you can find great
+			ebooks for any level.</p>
+
+		<div class="gap-4 pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Visual Customisation</h4>
+				<p>You can change the font family or adjust it making it bigger or smaller for easier reading.</p>
+				<h4>Electronic</h4>
+				<p>You dont have to carry anything you can access all your ebooks from anywhere.</p>
+				<h4>No light required</h4>
+				<p>Since most of the screens provides their own light, you dont have to find one to study.</p>
+				<h4>Eco Friendly</h4>
+				<p>eBooks are eco friendly no trees where cut down in the process of distribution.</p>
+				<h4>Comes Free too</h4>
+				<p>There are a lots of free eBooks available besides paid eBooks.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Require electronic device</h4>
+				<p>You should have a PC or a mobile device thats able to read your eBook format (PDF or Epub).</p>
+				<h4>Availability</h4>
+				<p>Not every book has got an eBook version.</p>
+				<h4>Comprehension</h4>
+				<p>Ebooks are harder to absorb than a printed version.</p>
+				<h4>Eye Strain</h4>
+				<p>Reading constantly on a screen can strain your eyes, resulting in red-eyes or itchiness in eyes. Read
+					on well lighted rooms.</p>
+				<h4>Screen Tiring</h4>
+				<p>Staring at a lit screen can be tiring for the eyes and the brain and may disrupt your sleep.</p>
+			</div>
+		</div>
+		<h3 class="inline-block w-auto mb-2 text-lg font-bold text-gray-800 border-b-2 border-green-600">Links</h3>
+		{{- partial "components/buttons/ebook-1.html" . -}}
+
+		<hr>
+
+		<h2 class="way-h2">02. Book</h2>
+		<p>Physical books, we've been using them for centuries and for a good reason, with their comprehension ranking
+			up Top we can say its the ideal way for someone to start learning {{ .Params.name }} programming, lots of
+			great content and it is recommended for any level.</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Comes Free too</h4>
+				<p>There are a lots of free eBooks available besides paid eBooks.</p>
+				<h4>Rare Content</h4>
+				<p>There are a lot of books that are not available as an eBook.</p>
+				<h4>Easier Sleep</h4>
+				<p>Studying a book at night makes it easier to sleep than a screen reader as they suppress melatonin and
+					make it harder to sleep.</p>
+				<h4>Comprehension</h4>
+				<p>Print can be remembered and absorbed better than an eBook.</p>
+				<h4>Less distracting</h4>
+				<p>Printed books are less distracting than an eBook as you dont skim pages.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>No Eco-Friendly</h4>
+				<p>Books are way more harmful to the enviroment than ebooks.</p>
+				<h4>Size</h4>
+				<p>The size of the books can cause you problems from carrying to storing it.</p>
+				<h4>Durability</h4>
+				<p>Books are not as durable an eBook is, you have to preserve it your self in a good condition.</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2 class="way-h2">03. Watch Videos</h2>
+		<p>Watching videos is a great way to learn {{ .Params.name }} programming but the content and the depth of the
+			subjects might be limited, as videos tend to cover parts of programming. Great way for beginner and maybe
+			advanced programmers as you can watch some live programming and reproduce it, but not ideal for professional
+			as the depth and the content is quite limited.</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Comprehension</h4>
+				<p>Watching videos is a very good way to understand the topic at hand depending on the depth of the
+					video.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Depth</h4>
+				<p>Watching videos may lack depth in some topics or for more advanced coding concepts.</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2 class="way-h2">04. Online Courses</h2>
+		<p>Online courses is a great way also for anyone who wants to start {{ .Params.name }} programming or enchance
+			some skills. The most notable benefits of the online courses is the Customised schedule and their
+			comprehension, making them an excellent way for someone with limited time or a problematic schedule.</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Customised Schedule</h4>
+				<p>You can have your own custom schedule in the courses.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Cost</h4>
+				<p>Online courses most of the time have a fee, although there a free too.</p>
+			</div>
+		</div>
+
+		<hr>
+		
+		<h2 class="way-h2">05. Online Code Editors</h2>
+		<p>Online editors are usefull online tools where you can create, test and debug usually small parts of code in
+			{{ .Params.name }}. They are also known as fiddle or code pens. They are usually better if you have some
+			prior knowledge.</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Fast test</h4>
+				<p>You can use online editors to fast test a snippet of code, you dont have to setup anything in your
+					system</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Limitations</h4>
+				<p>There are a few limitations in the code you can write and use as is is an online enviroment.</p>
+				<h4>Prerequisities</h4>
+				<p>Some prior knowledge might be required depending on the code and the IDE you are testing on.</p>
+			</div>
+		</div>
+
+		<hr>
+		
+		<h2 class="way-h2">06. Official Docs</h2>
+		<p>Official documentation is the {{ .Params.name }} developer official manual for exlaining the language.</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Depth</h4>
+				<p>Official Docs normally should cover almost all the coding aspects of the {{ .Params.name }} language.
+				</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Official Dependance</h4>
+				<p>The official documentation is as good as the official developer allowed to, some documentations might
+					be overwhelming or with not clear or up-to-date coding style or examples.</p>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<h2 class="way-h2">07. Interactive Tutorials</h2>
+		<p>Interactive tutorials is also a great way especialy for starters, because you get the theory along with an
+			interactive example where you can see exactly how is your code working.</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Fast Paced</h4>
+				<p>Interactive tutorials are a fast way to understand coding with their interaction showing both theory
+					and propably a live example where you can explore around.</p>
+				<h4>Comprehension</h4>
+				<p>Interactive tutorials ranks up very good in the comprehension chart, offering you a way to grasp
+					things faster.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Depth</h4>
+				<p>Interactive tutorials may lack depth for more advanced and complex codes.</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2 class="way-h2">08. Coding Games</h2>
+		<p></p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Fast Paced</h4>
+				<p>Pretty similar with the interactive tutorials, coding games are a fast way to understand coding with
+					their live interaction.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Depth</h4>
+				<p>Coding games may lack depth for more advanced and complex codes.</p>
+			</div>
+		</div>
+		
+		<hr>
+		
+		<h2 class="way-h2">.09 Find a Teacher</h2>
+		<p></p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Comprehension</h4>
+				<p>Finding a teacher is propably the best way to understand a topic better, a good teacher is
+					irreplaceable and can fill you up with what ever piece of information you may be missing.</p>
+				<h4>Fast Paced</h4>
+				<p>A teacher will have a standard pace but in general you will absorve more and faster than the other
+					methods.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Time Limited</h4>
+				<p>A teachers time is precious too, so the time they can teach you is limited but surely worth it.</p>
+				<h4>Cost</h4>
+				<p>Depending on the topic, you might have to pay the teacher, there are a lot of free coding maths
+					around the world.</p>
+			</div>
+		</div>
+
+		<hr>
+		
+		<h2 class="way-h2">10. Find a Mentor Online</h2>
+		<p></p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Comprehension</h4>
+				<p>Finding a teacher or a mentor is propably the best way to understand a topic better, a good teacher
+					is irreplaceable and can fill you up with what ever piece of information you may be missing.</p>
+				<h4>Fast Paced</h4>
+				<p>A teacher will have a standard pace but in general you will absorve more and faster than the other
+					methods.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Time Limited</h4>
+				<p>A teachers time is precious too, so the time they can teach you is limited although with online
+					teaching its easier.</p>
+				<h4>Cost</h4>
+				<p>Depending on the topic, you might have to pay the teacher.</p>
+			</div>
+		</div>
+
+		<hr>
+		
+		<h2 class="way-h2">11. Research & Play with other people codes</h2>
+		<p></p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Fast Paced</h4>
+				<p>Expirementing with other people codes, it saves you the time to type it your self and play around
+					with it to understand its coding concepts better along with other things such as coding
+					architecture.</p>
+				<h4>Depth</h4>
+				<p>You can find lots of complex codes online and research them, even for very advanced coding concepts.
+				</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Coding influnse</h4>
+				<p>Expirementing with other people codes you might inherit some of their "bad coding" too, so watch out
+					for bad coding or outdated habbits.</p>
+			</div>
+		</div>
+
+		<hr>
+		
+		<h2 class="way-h2">12. Print your Notes</h2>
+		<p>Another very usefull way to memorise something better is by printing it, either that may be a snippet, code
+			examples, notes or even a whole book. There are a lot of cheatsheets ready that you could print too, but
+			organising the key points you are missing researching them and printing them with a presentation that makes
+			senses to you with examples and snippets or other explanations, makes it easier and faster to understand it,
+			having them posted close to your coding station so you can refer to them fast.</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Comprehension</h4>
+				<p>In terms of comprehension your own notes ranks up in the 1st place, since you are the one that made
+					them.</p>
+				<h4>Visual Customisation</h4>
+				<p>You can change the notes font size and family according to your needs.</p>
+				<h4>Sharing</h4>
+				<p>There are no limits to sharing your own notes, feel free to send it to your friends.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Require electronic device</h4>
+				<p>You should have a PC or a mobile device to create your notes.</p>
+				<h4>Requires Printer</h4>
+				<p>You should have access or own a printer.</p>
+				<h4>Requires Time</h4>
+				<p>Creating and organising your own notes requires time, but it will worth it.</p>
+			</div>
+		</div>
+
+		<hr>
+
+		<h2 class="way-h2">13. Fake Teaching</h2>
+		<p>Some recent studies have shown that when we get to the story-telling mode our brain functions better and
+			connects the dots faster, so try teaching or even fake it to someone, it will help you memorise them longer.
+		</p>
+		<div class="pro-grid">
+			<div class="column">
+				<h3 class="base-c-p pro">Pros</h3>
+				<h4>Long memory</h4>
+				<p>When fake teaching our "story" is printed better for longer time.</p>
+				<h4>Fast</h4>
+				<p>Story telling's are generally fast paced, so you can refresh your current knowledge set at a fast
+					tempo.</p>
+			</div>
+			<div class="column">
+				<h3 class="base-c-p con">Cons</h3>
+				<h4>Prerequisities</h4>
+				<p>To fake teaching you need to have some prior knowledge on the subject to do so.</p>
+			</div>
+		</div>
+	</section>
+</article>
+{{ end }}

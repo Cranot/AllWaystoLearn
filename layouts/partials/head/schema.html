@@ -1,0 +1,72 @@
+<script type="application/ld+json"> {
+    "@context": "https://schema.org",
+    "@graph": [{
+            "@type": "WebSite",
+            "@id": {{ print .Site.BaseURL "#webpage"}},
+            "url": {{.Site.BaseURL}},
+            "name": {{ .Site.Params.sitename }},
+            "description": {{ .Site.Params.description }},
+            "inLanguage": {{.Site.Params.languageCode}}
+			
+	{{ if isset .Params "ogimage" }}
+		}, {
+        "@type": "ImageObject",
+        "@id": {{ print .Permalink "#primaryimage"}},
+        "inLanguage": {{.Site.Params.languageCode}},
+        "url": {{ .Params.ogimage | absURL }},
+        "width": 260,
+        "height": 210 }
+		, {
+        "@type": "WebPage",
+        "@id": {{ print .Permalink "#webpage"}},
+		"url": {{.Permalink}},
+        "name": {{.Title}},
+        "isPartOf": {
+            "@id": {{ print .Site.BaseURL "#webpage"}}
+        },
+        "primaryImageOfPage": {
+            "@id": {{ print .Permalink "#primaryimage"}}
+        },
+		"datePublished": "{{ safeHTML ( .Date.Format "2006-01-02T15:04:05+00:00" ) }}",
+		"dateModified": "{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05+00:00" ) }}",
+		"author": {
+                "@id": {{ range .Param "authors" }}{{ $name := . }}{{ $path := printf "/%s/%s" "authors" ($name | urlize) }}{{ with $.Site.GetPage $path }}	{{.Permalink}} {{ end }}{{ end }} },
+		"inLanguage": {{.Site.Params.languageCode}},
+        "potentialAction": [{
+            "@type": "ReadAction",
+            "target": [{{.Permalink}}]
+            }]
+		}
+		, {
+            "@type": [
+                "Person"
+            ],
+			{{ range .Param "authors" }}{{ $name := . }}{{ $path := printf "/%s/%s" "authors" ($name | urlize) }}{{ with $.Site.GetPage $path }} 
+            "@id": {{.Permalink}},
+            "name": {{.Title}},
+            "image": {
+                "@type": "ImageObject",
+                "@id": {{ print .Permalink "#personlogo"}},
+                "inLanguage": {{.Site.Params.languageCode}},
+                "url": {{ print .Site.BaseURL "img" $path "/profile-small.png"}},
+                "caption": {{.Title}}
+            }
+			{{ end }}{{ end }} }
+	{{else}}
+		
+				},
+		{
+		"@type": "WebPage",
+        "@id": {{ print .Permalink "#webpage"}},
+		"url": {{.Permalink}},
+        "name": {{.Title}},
+        "isPartOf": {
+            "@id": {{ print .Site.BaseURL "#webpage"}} },
+		"datePublished": "{{ safeHTML ( .Date.Format "2006-01-02T15:04:05+00:00" ) }}",
+		"dateModified": "{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05+00:00" ) }}",
+		"description": "{{.Site.Params.description}}",
+		"inLanguage": "{{.Site.Params.languageCode}}"
+		}
+  {{end}}
+]}
+</script>

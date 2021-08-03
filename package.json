@@ -1,0 +1,31 @@
+{
+  "name": "allwaystolearn",
+  "version": "1.0.0",
+  "description": "All Ways to Learn - Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cranot/AllWaystoLearn.git"
+  },
+  "keywords": [
+    "tailwindcss",
+    "hugo",
+    "learn"
+  ],
+  "author": "Dimitris Mitsos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Cranot/AllWaystoLearn/issues"
+  },
+  "homepage": "https://github.com/Cranot/AllWaystoLearn#readme",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.7"
+  }
+}

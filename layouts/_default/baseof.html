@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Params.languageCode }}">
+{{- partial "head.html" . -}}
+
+<body class="flex flex-col min-h-screen font-sans">
+    {{- partial "header.html" . -}}
+    <main class="flex-grow">
+        {{- block "main" . }}{{- end }}
+    </main>
+    {{- partial "footer.html" . -}}
+	{{- partial "before-body.html" . -}}
+</body>
+
+</html>

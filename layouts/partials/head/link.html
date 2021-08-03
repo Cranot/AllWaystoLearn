@@ -1,0 +1,5 @@
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ .Site.BaseURL }}sitemap.xml">
+{{ if isset .Params "ogimage" }}
+<link rel="image_src" href="{{ .Params.ogimage | absURL }}">
+{{ end }}

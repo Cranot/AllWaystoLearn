@@ -1,0 +1,28 @@
+{{ define "main" }}
+<article class="container p-2 pt-4 mx-auto">
+	<header class="overflow-hidden bg-white shadow">
+		<div class="px-4 py-5 sm:px-6">
+			<h1 class="text-2xl font-bold text-gray-900">{{ .Params.name }} Programming Ebooks</h1>
+			<p class="max-w-2xl my-2 text-sm text-gray-900">{{ .Params.description }}</p>
+			{{- partial "programming/breadcrumb.html" . -}}
+			<div class="pt-2 pl-2 text-sm font-semibold text-gray-900">For more ways to learn {{ .Params.name }} check our {{ range where (where .Site.Pages ".Params.layout" "programming") ".Params.name" .Params.name }} <a class="underline" href="{{ .Params.url }}" title="{{ .Params.title }}">{{ .Params.title }}</a> page.
+{{ end }}
+	</div>
+		</div>
+		{{- partial "programming/infobox.html" . -}}
+	</header>
+	<section>
+		<div>
+			<h2 class="mt-8 text-xl font-bold text-gray-900">{{ .Params.name }} Ebooks on amazon</h2>
+		</div>
+		{{- partial "components/buying-tip-red.html" . -}}
+		<div class="flex flex-wrap justify-around my-2">
+			{{ range where .Site.Pages ".Params.proglanguagename" .Params.name }}
+				<iframe class="my-1 h-60" title="Amazon {{.Params.name }} ebook - {{ .Params.bookid }}"
+					marginwidth="0" marginheight="0" scrolling="no" frameborder="0" style="width:120px;height:240px;"
+					src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=US&source=ac&ref={{.Site.Params.amazonref}}&ad_type=product_link&tracking_id=allwaystole00-20&marketplace=amazon&region=US&placement={{ .Params.bookid }}&asins={{ .Params.bookid }}&linkId={{ .Params.linkid }}&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff"></iframe>
+			{{ end }}
+		</div>
+	</section>
+</article>
+{{ end }}

@@ -1,0 +1,37 @@
+<nav class="relative shadow-sm bg-gray-50" aria-label="main navigation">
+	<div class="container flex items-center justify-between mx-auto">
+		<!-- Logo Small Icon -->
+		<a href="/" data-config-id="brand" class="w-32 h-auto">
+			<img width="128" height="36" src="/img/svg/logo.svg" alt="All Ways to Learn Logo">
+		</a>
+		
+		<!-- Menu Items -->
+		<ul class="flex">
+			{{ $currentPage := . }}
+			{{ range .Site.Menus.main }}
+			{{ if .HasChildren }}
+			<li class="toggleable">
+				<input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
+				<label for="toggle-one"
+					class="block px-4 py-6 text-sm font-semibold cursor-pointer lg:p-6 lg:text-base">{{ .Name }}</label>
+				<div role="toggle" class="z-10 p-6 mb-16 bg-gray-600 shadow-xl bg-opacity-90 mega-menu sm:mb-0">
+					<div class="container flex flex-row-reverse mx-auto">
+						<ul
+							class="w-full px-4 pt-6 pb-6 bg-blue-500 rounded-sm sm:w-1/2 lg:w-auto">
+							<li><span class="block py-1 mb-4 text-sm font-semibold text-white border-b border-white">Programming Languages</span></li>
+							{{ range .Children }}
+							<li>{{ .Pre }}<a href="{{ .URL }}" title="All ways to learn {{.Name}} Programming"
+									class="nav-li-a">{{ .Name }}</a>{{ .Post }}</li>
+							{{ end }}
+						</ul>
+					</div>
+				</div>
+			</li>
+			{{ else }}
+			<li>{{ .Pre }}<a href="{{ .URL }}" title="{{.Name}}"
+					class="nav-no-inner">{{ .Name }}</a>{{ .Post }}</li>
+			{{ end }}
+			{{ end }}
+		</ul>
+	</div>
+</nav>
