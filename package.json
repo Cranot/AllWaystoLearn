@@ -21,7 +21,8 @@
     "url": "https://github.com/Cranot/AllWaystoLearn/issues"
   },
   "homepage": "https://github.com/Cranot/AllWaystoLearn#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.3.1",
     "postcss": "^8.3.6",
